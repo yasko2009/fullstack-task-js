@@ -2,6 +2,8 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import productsRouter from "./routes/products";
+import authRouter from "./routes/auth";
+import profileRouter from "./routes/profile";
 
 dotenv.config();
 
@@ -11,6 +13,8 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/products", productsRouter);
+app.use("/api/auth", authRouter);
+app.use("/api/profile", profileRouter);
 
 const PORT = process.env.PORT || 5000;
 
